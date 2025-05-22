@@ -357,14 +357,12 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "streamlit" },
-    { name = "streamlit-lottie" },
     { name = "streamlit-option-menu" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "streamlit", specifier = ">=1.45.1" },
-    { name = "streamlit-lottie", specifier = ">=0.0.5" },
     { name = "streamlit-option-menu", specifier = ">=0.4.0" },
 ]
 
@@ -565,18 +563,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f0/46/9b3f73886f82d27849ce1e7a74ae7c39f5323e46da0b6e8847ad4c25f44c/streamlit-1.45.1.tar.gz", hash = "sha256:e37d56c0af5240dbc240976880e81366689c290a559376417246f9b3f51b4217", size = 9463953, upload-time = "2025-05-12T20:40:30.562Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/13/e6/69fcbae3dd2fcb2f54283a7cbe03c8b944b79997f1b526984f91d4796a02/streamlit-1.45.1-py3-none-any.whl", hash = "sha256:9ab6951585e9444672dd650850f81767b01bba5d87c8dac9bc2e1c859d6cc254", size = 9856294, upload-time = "2025-05-12T20:40:27.875Z" },
-]
-
-[[package]]
-name = "streamlit-lottie"
-version = "0.0.5"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "streamlit" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/4b/d4/e13ac9bde5b81b308d061092a420008af78c8b08547739423195596452d8/streamlit-lottie-0.0.5.tar.gz", hash = "sha256:c61589fb92bdf1dd5bd0a2ea75315d92e3383f46059b3704515d096a1e953d79", size = 792567, upload-time = "2023-06-05T13:54:58.718Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/52/b5/8ad7fa3101ec5baed712107a4cf304f174261f2ed2bebe063ad1fbedfe88/streamlit_lottie-0.0.5-py3-none-any.whl", hash = "sha256:98656d6f1cc99c5d96fb8329bafbcdbb65709ad0a05176dffdf4755f6fc04cff", size = 802386, upload-time = "2023-06-05T13:54:56.542Z" },
 ]
 
 [[package]]
