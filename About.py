@@ -4,6 +4,14 @@ import requests
 
 st.set_page_config(layout="wide")
 
+hide_streamlit_style = """
+    <style>
+        /* Hide the hamburger menu (with share and GitHub icons) */
+        #MainMenu {visibility: hidden;}
+"""
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # Option Menu
 selected = option_menu(
     menu_title=None,
