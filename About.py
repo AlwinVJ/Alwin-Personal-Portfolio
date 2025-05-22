@@ -50,10 +50,10 @@ if selected == "About":
             "<h4>AI/ML Engineer</h4>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/733/733553.png' alt='GitHub' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
             "</a>"
             "<a href='https://www.linkedin.com/in/alwinvj' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/145/145807.png' alt='LinkedIn' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF' alt='LinkedIn' style='width: 24px; height: 24px;'>"
             "</a>"
             "</div>"
             "<br>"
@@ -72,7 +72,7 @@ if selected == "About":
 
         st.markdown(aboutme, unsafe_allow_html=True)
 
-        # Custom CSS for card styling
+        # Technologies I use layout
         st.markdown(
             """
         <h4>TECHNOLOGIES I USE:</h4>
@@ -115,16 +115,16 @@ if selected == "About":
             {"name": "R", "icon": "https://www.r-project.org/logo/Rlogo.png"},
             {
                 "name": "Django",
-                "icon": "https://static.djangoproject.com/img/logos/django-logo-negative.png",
+                "icon": "https://img.icons8.com/?size=100&id=AksudKrBQryM&format=png&color=40C057",
             },
-            {"name": "Flask", "icon": "https://logo.svgcdn.com/l/flask.png"},
+            {"name": "Flask", "icon": "https://img.icons8.com/?size=100&id=AqYCfGyGXlO7&format=png&color=FFFFFF"},
             {
                 "name": "Flutter",
                 "icon": "https://img.icons8.com/color/48/000000/flutter.png",
             },
             {
                 "name": "Streamlit",
-                "icon": "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png",
+                "icon": "https://img.icons8.com/?size=100&id=Rffi8qeb2fK5&format=png&color=000000",
             },
             {
                 "name": "TensorFlow",
@@ -178,6 +178,96 @@ if selected == "About":
                 """,
                     unsafe_allow_html=True,
                 )
+        # Apps I use layout
+        st.markdown(
+            """
+        <h4>APPLICATIONS I USE:</h4>
+        <style>
+            .card {
+            background-color: #1A1A1A;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            height: 125px;
+            }
+            .card img {
+            height: 40px;
+            margin-bottom: 10px;
+            }
+            .card h6 {
+            text-align: center;
+            margin-left: 10px;
+            margin-righ: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+        </style>
+        """,
+            unsafe_allow_html=True,
+        )
+
+        # Technologies I use data
+        tools = [
+            {
+                "name": "VS Code",
+                "icon": "https://cdn-icons-png.flaticon.com/512/906/906324.png",
+            },
+            {"name": "Google Colab", "icon": "https://img.icons8.com/?size=100&id=lOqoeP2Zy02f&format=png&color=000000"},
+            {"name": "Jupyter Notebook", "icon": "https://img.icons8.com/?size=100&id=J0SgMWzAxqFj&format=png&color=000000"},
+            {
+                "name": "Postman",
+                "icon": "https://img.icons8.com/?size=100&id=EPbEfEa7o8CB&format=png&color=000000",
+            },
+            {"name": "Figma", "icon": "https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000"},
+            {
+                "name": "Slack",
+                "icon": "https://img.icons8.com/?size=100&id=OXVeOEj6qZqX&format=png&color=000000",
+            },
+            {
+                "name": "Jira",
+                "icon": "https://img.icons8.com/?size=100&id=oROcPah5ues6&format=png&color=000000",
+            },
+            {
+                "name": "Power BI",
+                "icon": "https://img.icons8.com/?size=100&id=Ny0t2MYrJ70p&format=png&color=000000",
+            },
+            {
+                "name": "Tableau",
+                "icon": "https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000",
+            },
+            {
+                "name": "Google Sheets",
+                "icon": "https://img.icons8.com/?size=100&id=30461&format=png&color=000000",
+            },
+            {
+                "name": "MS EXcel",
+                "icon": "https://img.icons8.com/?size=100&id=UECmBSgBOvPT&format=png&color=000000",
+            },
+            {
+                "name": "Google Sites",
+                "icon": "https://img.icons8.com/?size=100&id=Jan95WujfAel&format=png&color=000000",
+            },
+        ]
+
+        # Layout: 4 columns per row
+        cols = st.columns(6)
+
+        for idx, tool in enumerate(tools):
+            with cols[idx % 6]:
+                st.markdown(
+                    f"""
+                <div class="card">
+                <img src="{tool['icon']}" alt="{tool['name']} logo">
+                <h6>{tool['name']}</h6>
+                </div>
+                """,
+                    unsafe_allow_html=True,
+                )
 
     # Footer
     st.markdown(
@@ -212,10 +302,10 @@ elif selected == "Education":
             "<h5 style>AI/ML Engineer</h5>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/733/733553.png' alt='GitHub' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
             "</a>"
             "<a href='https://www.linkedin.com/in/alwinvj' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/145/145807.png' alt='LinkedIn' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF' alt='LinkedIn' style='width: 24px; height: 24px;'>"
             "</a>"
             "</div>"
             "<br>"
@@ -367,10 +457,10 @@ elif selected == "Experience":
             "<h5 style>AI/ML Engineer</h5>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/733/733553.png' alt='GitHub' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
             "</a>"
             "<a href='https://www.linkedin.com/in/alwinvj' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/145/145807.png' alt='LinkedIn' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF' alt='LinkedIn' style='width: 24px; height: 24px;'>"
             "</a>"
             "</div>"
             "<br>"
@@ -416,10 +506,10 @@ elif selected == "Projects":
             "<h5>AI/ML Engineer</h5>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/733/733553.png' alt='GitHub' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
             "</a>"
             "<a href='https://www.linkedin.com/in/alwinvj' target='_blank' style='margin: 0 10px;'>"
-            "<img src='https://cdn-icons-png.flaticon.com/512/145/145807.png' alt='LinkedIn' style='width: 24px; height: 24px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF' alt='LinkedIn' style='width: 24px; height: 24px;'>"
             "</a>"
             "</div>"
             "<br>"
