@@ -59,7 +59,8 @@ if selected == "About":
             "<br>"
             "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
             "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
-            "</div>",
+            "</div>"
+            "<br>",
             unsafe_allow_html=True,
         )
 
@@ -174,7 +175,8 @@ elif selected == "Education":
             "<br>"
             "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
             "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
-            "</div>",
+            "</div>"
+            "<br>",
             unsafe_allow_html=True,
         )
 
@@ -219,7 +221,8 @@ elif selected == "Experience":
             "<br>"
             "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
             "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
-            "</div>",
+            "</div>"
+            "<br>",
             unsafe_allow_html=True,
         )
 
@@ -264,7 +267,8 @@ elif selected == "Projects":
             "<br>"
             "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
             "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
-            "</div>",
+            "</div>"
+            "<br>",
             unsafe_allow_html=True,
         )
 
