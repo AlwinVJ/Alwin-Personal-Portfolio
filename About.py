@@ -244,7 +244,7 @@ elif selected == "Projects":
         st.markdown(
             "<div style='text-align: center;border-right:2px solid #ccc;'>"
             "<h2>Alwin V J</h2>"
-            "<h5 style>AI/ML Engineer</h5>"
+            "<h5>AI/ML Engineer</h5>"
             "<div style='margin: 10px 0;'>"
                 "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
                     "<img src='https://cdn-icons-png.flaticon.com/512/733/733553.png' alt='GitHub' style='width: 24px; height: 24px;'>"
