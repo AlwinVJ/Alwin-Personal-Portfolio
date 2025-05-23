@@ -44,7 +44,8 @@ selected = option_menu(
 # About page
 if selected == "About":
     col1, col2 = st.columns([2, 6])
-
+    
+    # Essential details column in about me page
     with col1:
         st.markdown("""
              <style>
@@ -73,7 +74,7 @@ if selected == "About":
                  border-radius: 6px;
              }
          
-             /* Remove border on tablet and mobile (≤ 1024px) */
+             /* Make the essential details responsive */
              @media screen and (max-width: 1024px) {
                  .essential-details {
                      border-right: none !important;
@@ -126,6 +127,8 @@ if selected == "About":
         )
 
     with col2:
+        
+        # About me detailed section in about me page
         st.header("Hi, I'm _Alwin V J_")
         aboutme = """<p style='text-align: justify; padding:10px'>
             "I am an AI/ML Engineer with a solid foundation in developing and deploying intelligent systems that solve real-world problems. Over the past year, I have worked on impactful projects involving machine learning, deep learning, and data-driven automation—ranging from predictive analytics to natural language processing and computer vision. I enjoy turning complex data into actionable insights and building end-to-end AI solutions from research to production. Passionate about continuous learning and staying current with the latest in AI advancements, I take pride in writing clean, efficient code and collaborating across disciplines to bring innovative ideas to life. I am proficient in Python and SQL, which has enabled me to efficiently manage data, develop models, and ensure quality through unit testing. Beyond my technical abilities, my adaptability, multitasking, and leadership skills drive my continuous learning and success in dynamic team environments."
@@ -238,6 +241,8 @@ if selected == "About":
                 """,
                     unsafe_allow_html=True,
                 )
+                
+        
         # Apps I use layout
         st.markdown("""
         <h4>APPLICATIONS I USE:</h4>
@@ -276,7 +281,7 @@ if selected == "About":
             unsafe_allow_html=True,
         )
 
-        # Technologies I use data
+        # Applications I use data
         tools = [
             {
                 "name": "VS Code",
@@ -319,7 +324,7 @@ if selected == "About":
             },
         ]
 
-        # Layout: 4 columns per row
+        # Layout: 6 columns per row
         cols = st.columns(6)
 
         for idx, tool in enumerate(tools):
@@ -359,7 +364,9 @@ if selected == "About":
 # Education Page
 elif selected == "Education":
     col1, col2 = st.columns([2, 6])
-
+    
+    
+    # Essential Details columns
     with col1:
         st.markdown("""
              <style>
@@ -401,7 +408,8 @@ elif selected == "Education":
             "<br>",
             unsafe_allow_html=True,
         )
-
+    
+    # Education timeline column - showing academic milestone
     with col2:
         st.markdown(
         """
@@ -564,7 +572,8 @@ elif selected == "Education":
 # Experience Page
 elif selected == "Experience":
     col1, col2 = st.columns([2, 6])
-
+    
+    # Essential details columns
     with col1:
         st.markdown("""
              <style>
