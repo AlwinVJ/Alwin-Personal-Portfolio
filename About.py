@@ -40,6 +40,8 @@ selected = option_menu(
     },
 )
 
+# Page contents starts here
+# About page
 if selected == "About":
     col1, col2 = st.columns([2, 6])
 
@@ -316,7 +318,7 @@ if selected == "About":
         unsafe_allow_html=True,
     )
 
-
+# Education Page
 elif selected == "Education":
     col1, col2 = st.columns([2, 6])
 
@@ -521,6 +523,7 @@ elif selected == "Education":
             unsafe_allow_html=True,
         )
 
+# Experience Page
 elif selected == "Experience":
     col1, col2 = st.columns([2, 6])
 
@@ -591,6 +594,7 @@ elif selected == "Experience":
         unsafe_allow_html=True,
     )
 
+# Projects page
 elif selected == "Projects":
     col1, col2 = st.columns([2, 6])
 
@@ -614,7 +618,7 @@ elif selected == "Projects":
         st.markdown(
             "<div class = 'essential-details'>"
             "<h2>Alwin V J</h2>"
-            "<h5>AI/ML Engineer</h5>"
+            "<h5 style>AI/ML Engineer</h5>"
             "<h6 style='display: center; align-items: center; gap: 8x; color: white;'>"
             "<svg xmlns='http://www.w3.org/2000/svg' fill='white' width='20' height='20' viewBox='0 0 24 24'>"
             "<path d='M12 13.065L1.5 6.75V17.25H22.5V6.75L12 13.065ZM12 11.25L22.5 4.5H1.5L12 11.25Z'/>"
@@ -630,7 +634,7 @@ elif selected == "Projects":
             "</div>"
             "<br>"
             "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
-            "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px''>Hire Me</button>"
+            "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
             "</div>"
             "<br>",
             unsafe_allow_html=True,
