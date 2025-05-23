@@ -78,16 +78,17 @@ if selected == "About":
                      border-right: none !important;
                      padding: 0; 
                      width:100%;
-                     margin-bottom: 10px;
                  }
                  
                  .resumebutton{
                      width:45%;
                      margin-right: 5px;
+                     margin-bottom: 10px;
                  }
                  
                  .hiremebutton{
                      width:45%;
+                     margin-bottom: 10px;
                  }
                  
                  
