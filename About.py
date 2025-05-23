@@ -44,10 +44,31 @@ if selected == "About":
     col1, col2 = st.columns([2, 6])
 
     with col1:
+        st.markdown("""
+             <style>
+             .essential-details {
+                 text-align: center;
+                 border-right: 2px solid #ccc;
+                 padding: 1rem;
+             }
+         
+             /* Remove border on tablet and mobile (≤ 1024px) */
+             @media screen and (max-width: 1024px) {
+                 .essential-details {
+                     border-right: none !important;
+                 }
+             }
+             </style>
+             """, unsafe_allow_html=True)
         st.markdown(
-            "<div style='text-align: center;border-right:2px solid #ccc;'>"
+            "<div class='essential-details'>"
             "<h2>Alwin V J</h2>"
-            "<h4>AI/ML Engineer</h4>"
+            "<h5 style>AI/ML Engineer</h5>"
+            "<h6 style='display: center; align-items: center; gap: 8x; color: white;'>"
+            "<svg xmlns='http://www.w3.org/2000/svg' fill='white' width='20' height='20' viewBox='0 0 24 24'>"
+            "<path d='M12 13.065L1.5 6.75V17.25H22.5V6.75L12 13.065ZM12 11.25L22.5 4.5H1.5L12 11.25Z'/>"
+            "</svg>"
+            "&nbsp;&nbsp;alwinvj5@gmail.com</h6>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
             "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
@@ -73,8 +94,7 @@ if selected == "About":
         st.markdown(aboutme, unsafe_allow_html=True)
 
         # Technologies I use layout
-        st.markdown(
-            """
+        st.markdown("""
         <h4>TECHNOLOGIES I USE:</h4>
         <style>
             .card {
@@ -179,11 +199,16 @@ if selected == "About":
                     unsafe_allow_html=True,
                 )
         # Apps I use layout
-        st.markdown(
-            """
+        st.markdown("""
         <h4>APPLICATIONS I USE:</h4>
         <style>
-            .card {
+            @media screen and (max-width: 1024px) {
+                .card-applications{
+                    display: flex;
+                    align-items:center;
+                }
+            }
+            .card-applications {
             background-color: #1A1A1A;
             padding: 20px;
             border-radius: 12px;
@@ -194,11 +219,11 @@ if selected == "About":
             align-items: center;
             height: 125px;
             }
-            .card img {
+            .card-applications img {
             height: 40px;
             margin-bottom: 10px;
             }
-            .card h6 {
+            .card-applications h5 {
             text-align: center;
             margin-left: 10px;
             margin-righ: 10px;
@@ -261,9 +286,9 @@ if selected == "About":
             with cols[idx % 6]:
                 st.markdown(
                     f"""
-                <div class="card">
+                <div class="card-applications">
                 <img src="{tool['icon']}" alt="{tool['name']} logo">
-                <h6>{tool['name']}</h6>
+                <h5>{tool['name']}</h5>
                 </div>
                 """,
                     unsafe_allow_html=True,
@@ -296,10 +321,31 @@ elif selected == "Education":
     col1, col2 = st.columns([2, 6])
 
     with col1:
+        st.markdown("""
+             <style>
+             .essential-details {
+                 text-align: center;
+                 border-right: 2px solid #ccc;
+                 padding: 1rem;
+             }
+         
+             /* Remove border on tablet and mobile (≤ 1024px) */
+             @media screen and (max-width: 1024px) {
+                 .essential-details {
+                     display:none;
+                 }
+             }
+             </style>
+             """, unsafe_allow_html=True)
         st.markdown(
-            "<div style='text-align: center;border-right:2px solid #ccc;'>"
+            "<div class='essential-details'>"
             "<h2>Alwin V J</h2>"
             "<h5 style>AI/ML Engineer</h5>"
+            "<h6 style='display: center; align-items: center; gap: 8x; color: white;'>"
+            "<svg xmlns='http://www.w3.org/2000/svg' fill='white' width='20' height='20' viewBox='0 0 24 24'>"
+            "<path d='M12 13.065L1.5 6.75V17.25H22.5V6.75L12 13.065ZM12 11.25L22.5 4.5H1.5L12 11.25Z'/>"
+            "</svg>"
+            "&nbsp;&nbsp;alwinvj5@gmail.com</h6>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
             "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
@@ -318,8 +364,36 @@ elif selected == "Education":
 
     with col2:
         st.markdown(
-            """
+        """
         <style>
+        @media screen and (max-width: 1024px) {
+        .content h4 {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            font-size: 12px;}
+        .content h5{
+            margin: 0;
+            padding-top: 10px;
+            text-align: left;
+            padding-bottom: 0.5px;
+            font-size: 11px;}
+        .content h6{
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+        }
+        .container{
+            padding:5px 20px;
+            margin: 0;
+        }
+        .content{
+            padding:0;
+            text-align: left;
+        }
+        }
+        
+        
         .timeline {
           position: relative;
           max-width: 800px;
@@ -451,10 +525,31 @@ elif selected == "Experience":
     col1, col2 = st.columns([2, 6])
 
     with col1:
+        st.markdown("""
+             <style>
+             .essential-details {
+                 text-align: center;
+                 border-right: 2px solid #ccc;
+                 padding: 1rem;
+             }
+         
+             /* Remove border on tablet and mobile (≤ 1024px) */
+             @media screen and (max-width: 1024px) {
+                 .essential-details {
+                     display:none;
+                 }
+             }
+             </style>
+             """, unsafe_allow_html=True)
         st.markdown(
-            "<div style='text-align: center;border-right:2px solid #ccc;'>"
+            "<div class = 'essential-details'>"
             "<h2>Alwin V J</h2>"
             "<h5 style>AI/ML Engineer</h5>"
+            "<h6 style='display: center; align-items: center; gap: 8x; color: white;'>"
+            "<svg xmlns='http://www.w3.org/2000/svg' fill='white' width='20' height='20' viewBox='0 0 24 24'>"
+            "<path d='M12 13.065L1.5 6.75V17.25H22.5V6.75L12 13.065ZM12 11.25L22.5 4.5H1.5L12 11.25Z'/>"
+            "</svg>"
+            "&nbsp;&nbsp;alwinvj5@gmail.com</h6>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
             "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
@@ -500,10 +595,31 @@ elif selected == "Projects":
     col1, col2 = st.columns([2, 6])
 
     with col1:
+        st.markdown("""
+             <style>
+             .essential-details {
+                 text-align: center;
+                 border-right: 2px solid #ccc;
+                 padding: 1rem;
+             }
+         
+             /* Remove border on tablet and mobile (≤ 1024px) */
+             @media screen and (max-width: 1024px) {
+                 .essential-details {
+                     display:none;
+                 }
+             }
+             </style>
+             """, unsafe_allow_html=True)
         st.markdown(
-            "<div style='text-align: center;border-right:2px solid #ccc;'>"
+            "<div class = 'essential-details'>"
             "<h2>Alwin V J</h2>"
             "<h5>AI/ML Engineer</h5>"
+            "<h6 style='display: center; align-items: center; gap: 8x; color: white;'>"
+            "<svg xmlns='http://www.w3.org/2000/svg' fill='white' width='20' height='20' viewBox='0 0 24 24'>"
+            "<path d='M12 13.065L1.5 6.75V17.25H22.5V6.75L12 13.065ZM12 11.25L22.5 4.5H1.5L12 11.25Z'/>"
+            "</svg>"
+            "&nbsp;&nbsp;alwinvj5@gmail.com</h6>"
             "<div style='margin: 10px 0;'>"
             "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
             "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
