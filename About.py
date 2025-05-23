@@ -55,7 +55,8 @@ if selected == "About":
              }
              
              .resumebutton{
-                 width: 100%; max-width: 300px; 
+                 width: 100%; 
+                 max-width: 300px; 
                  background-color:#333333; 
                  color: white; 
                  padding: 10px 20px;
@@ -77,18 +78,22 @@ if selected == "About":
                  .essential-details {
                      border-right: none !important;
                      padding: 0; 
-                     width:100%;
+                     width: 100%;
                  }
                  
                  .resumebutton{
+                     max-widht: 45%;
                      width:45%;
                      margin-right: 5px;
                      margin-bottom: 10px;
+                     border: none;
                  }
                  
                  .hiremebutton{
+                    max-widht: 45%;
                      width:45%;
                      margin-bottom: 10px;
+                     border: none;
                  }
                  
                  
