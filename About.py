@@ -53,12 +53,41 @@ if selected == "About":
                  border-right: 2px solid #ccc;
                  padding: 1rem;
              }
+             
+             .resumebutton{
+                 width: 100%; max-width: 300px; 
+                 background-color:#333333; 
+                 color: white; 
+                 padding: 10px 20px;
+                 border-radius: 6px;
+                 margin-bottom: 10px
+             }
+             
+             .hiremebutton{
+                 width: 100%; 
+                 max-width: 300px; 
+                 background-color:#222222; 
+                 color: white; 
+                 padding: 10px 20px;
+                 border-radius: 6px;
+             }
          
              /* Remove border on tablet and mobile (≤ 1024px) */
              @media screen and (max-width: 1024px) {
                  .essential-details {
                      border-right: none !important;
                  }
+                 
+                 .resumebutton{
+                     width:45%;
+                     margin-right: 5px;
+                 }
+                 
+                 .hiremebutton{
+                     width:45%;
+                 }
+                 
+                 
              }
              </style>
              """, unsafe_allow_html=True)
@@ -80,8 +109,8 @@ if selected == "About":
             "</a>"
             "</div>"
             "<br>"
-            "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
-            "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
+            "<button class = 'resumebutton'>My Resume</button>"
+            "<button class = 'hiremebutton'>Hire Me</button>"
             "</div>"
             "<br>",
             unsafe_allow_html=True,
