@@ -76,6 +76,9 @@ if selected == "About":
              @media screen and (max-width: 1024px) {
                  .essential-details {
                      border-right: none !important;
+                     padding: 0; 
+                     width:100%;
+                     margin-bottom: 10px;
                  }
                  
                  .resumebutton{
