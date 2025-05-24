@@ -654,7 +654,7 @@ elif selected == "Experience":
           content: '';
           position: absolute;
           top: 10px;
-          left: -46px;;
+          left: -46.2px;;
           width: 16px;
           height: 16px;
           background-color: black;
@@ -697,7 +697,7 @@ elif selected == "Experience":
             padding-left: 40px;
           }
           .timeline-item::before {
-               left:-26px;;
+               left:-26.1px;;
            }
         
           .timeline-content {
@@ -719,7 +719,7 @@ elif selected == "Experience":
           <div class="timeline-item">
             <div class="timeline-content">
               <h4>ChefInTech</h4>
-              <h6>AI/ML Intern</h6>
+              <h6>Flutter Developer</h6>
               <p>Worked closely with UI/UX designers to draft interactive and responsive mobile application design<br>Developed mobile application through flutter framework. <br>Assisted in the integration of third-party application APIs and services to enhance application functionality.<br>Collaborated with cross functional teams including QA Testers, to ensure timely development of hight quality mobile application.</p>
             </div>
           </div>
