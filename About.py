@@ -452,7 +452,7 @@ elif selected == "Education":
           content: '';
           position: absolute;
           width: 4px;
-          background-color:yellow;
+          background-color:#4CAF50;
           top: 0;
           bottom: 0;
           left: 50%;
@@ -474,7 +474,7 @@ elif selected == "Education":
           height: 20px;
           right: -10px;
           background-color: #000;
-          border: 4px solid yellow;
+          border: 4px solid #4CAF50;
           top: 15px;
           border-radius: 50%;
           z-index: 1;
@@ -617,10 +617,117 @@ elif selected == "Experience":
         )
 
     with col2:
-        st.header("Experience page")
+        
+        # Timeline created in the main column in the experience page
+        st.markdown("""
+        <style>
+        /* Timeline wrapper */
+        .timeline-container {
+          position: relative;
+          margin: 50px 0;
+          padding-left: 60px;
+          max-width: 900px;
+        }
+        
+        /* Vertical line */
+        .timeline-container::before {
+          top: -40 px;
+          content: '';
+          position: absolute;
+          left: 20px;
+          right: 0px;
+          width: 4px;
+          height: 100%;
+          background-color: #4CAF50;
+          z-index: 1;
+        }
+        
+        /* Timeline item */
+        .timeline-item {
+          top: 0;
+          position: relative;
+          margin-bottom: 40px;
+        }
+        
+        /* Dot */
+        .timeline-item::before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: -46px;;
+          width: 16px;
+          height: 16px;
+          background-color: black;
+          border: 4px solid #4CAF50;
+          border-radius: 50%;
+          z-index: 1;
+        }
+        
+        /* Content box */
+        .timeline-content {
+          margin-top: 15px;
+          background-color:#333;
+          padding: 20px;
+          margin-left: 10px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          width: 600px;
+          max-width: 100%;
+          box-sizing: border-box;
+        }
+        
+        .timeline-content h4 {
+          text-align: left;
+          padding-top: 0;
+          padding-bottom: 5px;
+        }
+        .timeline-content h6 {
+          text-align: left;
+          padding-top: 0;
+          padding-bottom: 5px;
+        }
+        
+        .timeline-content p {
+            justify-content: justify;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+          .timeline-container {
+            padding-left: 40px;
+          }
+          .timeline-item::before {
+               left:-26px;;
+           }
+        
+          .timeline-content {
+            width: 70%;
+            margin-left: 30px;
+            padding: 15px;
+          }
+        }
+        </style>
+        
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>ChefInTech</h4>
+              <h6>AI/ML Intern</h6>
+              <p>Fine-tuned models for generating diet plans according to user inputs.<br>Managed data collection and analysis.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>ChefInTech</h4>
+              <h6>AI/ML Intern</h6>
+              <p>Worked closely with UI/UX designers to draft interactive and responsive mobile application design<br>Developed mobile application through flutter framework. <br>Assisted in the integration of third-party application APIs and services to enhance application functionality.<br>Collaborated with cross functional teams including QA Testers, to ensure timely development of hight quality mobile application.</p>
+            </div>
+          </div>
+        </div>
+        """, unsafe_allow_html=True)
 
-    # Footer
-    st.markdown(
+        # Footer
+        st.markdown(
         """
         <style>
           .footer {
@@ -637,9 +744,9 @@ elif selected == "Experience":
         <div class="footer">
         Made with ❤️ by Alwin | © 2025
         </div>
-    """,
+        """,
         unsafe_allow_html=True,
-    )
+        )
 
 # Projects page
 elif selected == "Projects":
