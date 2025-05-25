@@ -893,12 +893,6 @@ elif selected == "Contact Me":
                 messagearea = "Enter your message here"
                 message = st.text_area(label="Your message", placeholder=messagearea)
                 submitted = st.form_submit_button("&#10148;&nbsp;&nbsp;Send Messages")
-                
-                # Function to clear the fields
-                def clear_form():
-                    namearea = ""
-                    emailarea = ""
-                    messagearea = ""
             
                 if submitted:
                     if len(name)== 0 or len(message) == 0 or len(email) == 0:
@@ -907,7 +901,6 @@ elif selected == "Contact Me":
                         st.warning("Kindly fill a valid email ID")
                     else:
                         st.success("Thank you! Your message has been sent.")
-                        clear_form()
                         contactmedata = [
                             {
                                 "Name": name,
