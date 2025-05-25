@@ -1,6 +1,9 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import requests
+import requests, re
+from streamlit_gsheets import GSheetsConnection
+import pandas as pd
+import gspread
 
 st.set_page_config(layout="wide")
 
@@ -15,8 +18,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Option Menu
 selected = option_menu(
     menu_title=None,
-    options=["About", "Education", "Experience", "Projects"],
-    icons=["person-circle", "mortarboard", "briefcase", "code-slash"],
+    options=["About Me", "Education", "Experience", "Projects", "Contact Me"],
+    icons=["person-circle", "mortarboard", "briefcase", "code-slash","envelope"],
     default_index=0,
     orientation="horizontal",
     styles={
@@ -42,7 +45,7 @@ selected = option_menu(
 
 # Page contents starts here
 # About page
-if selected == "About":
+if selected == "About Me":
     col1, col2 = st.columns([2, 6])
     
     # Essential details column in about me page
@@ -818,3 +821,133 @@ elif selected == "Projects":
     """,
         unsafe_allow_html=True,
     )
+
+# Contact Me page
+elif selected == "Contact Me":
+    col1, col2 = st.columns([2, 6])
+
+    with col1:
+        st.markdown("""
+             <style>
+             .essential-details {
+                 text-align: center;
+                 border-right: 2px solid #ccc;
+                 padding: 1rem;
+             }
+         
+             /* Remove border on tablet and mobile (≤ 1024px) */
+             @media screen and (max-width: 1024px) {
+                 .essential-details {
+                     display:none;
+                 }
+             }
+             </style>
+             """, unsafe_allow_html=True)
+        st.markdown(
+            "<div class = 'essential-details'>"
+            "<h2>Alwin V J</h2>"
+            "<h5 style>AI/ML Engineer</h5>"
+            "<h6 style='display: center; align-items: center; gap: 8x; color: white;'>"
+            "<svg xmlns='http://www.w3.org/2000/svg' fill='white' width='20' height='20' viewBox='0 0 24 24'>"
+            "<path d='M12 13.065L1.5 6.75V17.25H22.5V6.75L12 13.065ZM12 11.25L22.5 4.5H1.5L12 11.25Z'/>"
+            "</svg>"
+            "&nbsp;&nbsp;alwinvj5@gmail.com</h6>"
+            "<div style='margin: 10px 0;'>"
+            "<a href='https://github.com/AlwinVJ' target='_blank' style='margin: 0 10px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF' alt='GitHub' style='width: 24px; height: 24px;'>"
+            "</a>"
+            "<a href='https://www.linkedin.com/in/alwinvj' target='_blank' style='margin: 0 10px;'>"
+            "<img src='https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF' alt='LinkedIn' style='width: 24px; height: 24px;'>"
+            "</a>"
+            "</div>"
+            "<br>"
+            "<button style='width: 100%; max-width: 300px; background-color:#333333; color: white; padding: 10px 20px;border-radius: 6px;margin-bottom: 10px'>My Resume</button>"
+            "<button style='width: 100%; max-width: 300px; background-color:#222222; color: white; padding: 10px 20px;border-radius: 6px;'>Hire Me</button>"
+            "</div>"
+            "<br>",
+            unsafe_allow_html=True,
+        )
+
+    with col2:
+        st.markdown("""
+        <style>
+        [data-testid="stTextInput"] > div > div > small {
+            display: none;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        st.title("Contact Me")
+        # Establishing Gsheet Connection
+        connection = st.connection("gsheets", type=GSheetsConnection)
+        
+        # Fetching existing data
+        existing_data = connection.read(worksheet="ContactMeForm",columnsfilled = list(range(3)))
+        existing_data = existing_data.dropna(how="all")
+        
+        with st.spinner("Loading..."):
+            with st.form(key="contact_info_form", clear_on_submit=True):
+                namearea = "Enter your name"
+                name = st.text_input(label="Name", placeholder= namearea)
+                emailarea = "Enter your email ID"
+                email = st.text_input(label="Email ID", placeholder=emailarea)
+                messagearea = "Enter your message here"
+                message = st.text_area(label="Your message", placeholder=messagearea)
+                submitted = st.form_submit_button("&#10148;&nbsp;&nbsp;Send Messages")
+                
+                # Function to clear the fields
+                def clear_form():
+                    namearea = ""
+                    emailarea = ""
+                    messagearea = ""
+            
+                if submitted:
+                    if len(name)== 0 or len(message) == 0 or len(email) == 0:
+                        st.warning("Please fill in all the fields")
+                    elif not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+                        st.warning("Kindly fill a valid email ID")
+                    else:
+                        st.success("Thank you! Your message has been sent.")
+                        clear_form()
+                        contactmedata = [
+                            {
+                                "Name": name,
+                                "Email ID": email,
+                                "Message": message
+                            }
+                        ]
+                        # Ensure both are DataFrames
+                        if isinstance(contactmedata, list):
+                            contactmedata = pd.DataFrame(contactmedata)
+                        
+                        if isinstance(existing_data, list):
+                            existing_data = pd.DataFrame(existing_data)
+                        
+                        #Adding the new data to the  existing_data
+                        updated_df = pd.concat([existing_data, contactmedata], ignore_index=True)
+                        # Update google sheets with new contact me info
+                        connection.update(worksheet="ContactMeForm", data=updated_df)
+        
+            
+
+    # Footer
+    st.markdown(
+        """
+        <style>
+          .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            background-color: #0E1117;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        </style>
+        <div class="footer">
+        Made with ❤️ by Alwin | © 2025
+        </div>
+    """,
+        unsafe_allow_html=True,
+    )
+    
