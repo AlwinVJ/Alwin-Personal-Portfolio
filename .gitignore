@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Ignore Streamlit secrets file
+.streamlit/secrets.toml
