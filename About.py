@@ -919,28 +919,30 @@ elif selected == "Contact Me":
                         updated_df = pd.concat([existing_data, contactmedata], ignore_index=True)
                         # Update google sheets with new contact me info
                         connection.update(worksheet="ContactMeForm", data=updated_df)
+                        
+                        # Footer
+                        st.markdown(
+                            """
+                            <style>
+                              .footer {
+                                position: fixed;
+                                bottom: 0;
+                                width: 100%;
+                                color: white;
+                                background-color: #0E1117;
+                                text-align: center;
+                                padding: 10px;
+                                font-size: 14px;
+                            }
+                            </style>
+                            <div class="footer">
+                            Made with ❤️ by Alwin | © 2025
+                            </div>
+                        """,
+                            unsafe_allow_html=True,
+                        )
         
             
 
-    # Footer
-    st.markdown(
-        """
-        <style>
-          .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            background-color: #0E1117;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
-        </style>
-        <div class="footer">
-        Made with ❤️ by Alwin | © 2025
-        </div>
-    """,
-        unsafe_allow_html=True,
-    )
+    
     
