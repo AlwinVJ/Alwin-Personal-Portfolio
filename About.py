@@ -798,29 +798,88 @@ elif selected == "Projects":
         )
 
     with col2:
-        st.header("Projects page")
-
-    # Footer
-    st.markdown(
-        """
+        st.title("What I Do Most")
+        st.markdown("""
+        <!-- HTML and CSS inserted here -->
         <style>
-          .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            background-color: #0E1117;
+          .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+          }
+        
+          .card {
+            background-color: #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 450px;
+            height: auto;
             text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
+            transition: transform 0.2s ease-in-out;
+          }
+        
+          .card-title {
+            white-space: nowrap;           
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: left;
+          }
+        
+          .card-content {
+            text-align: left;
+            font-size: 16px;
+            color: #white;
+          }
         </style>
-        <div class="footer">
-        Made with ❤️ by Alwin | © 2025
+        
+        <div class="card-container">
+          <div class="card">
+            <div class="card-title">Machine Learning</div>
+            <div class="card-content">Creating intelligent systems through advanced AI and machine learning methodologies.</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Web/Mobile Application Development</div>
+            <div class="card-content">Building scalable, responsive and user-centric web and mobile applications</div>
+          </div>
         </div>
-    """,
-        unsafe_allow_html=True,
-    )
+        <div class="card-container">
+          <div class="card">
+            <div class="card-title">API Development</div>
+            <div class="card-content">Delivering efficient API solutions for seamless client-server communication.</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Deployment</div>
+            <div class="card-content">Ensuring seamless deployment and maintenance of models and applications.</div>
+          </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+
+        # Footer
+        st.markdown(
+            """
+            <style>
+              .footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                color: white;
+                background-color: #0E1117;
+                text-align: center;
+                padding: 10px;
+                font-size: 14px;
+            }
+            </style>
+            <div class="footer">
+            Made with ❤️ by Alwin | © 2025
+            </div>
+        """,
+            unsafe_allow_html=True,
+        )
 
 # Contact Me page
 elif selected == "Contact Me":
