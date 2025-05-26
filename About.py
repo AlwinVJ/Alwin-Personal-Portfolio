@@ -817,7 +817,6 @@ elif selected == "Projects":
             padding: 20px;
             width: 450px;
             height: auto;
-            text-align: center;
             transition: transform 0.2s ease-in-out;
           }
         
@@ -833,6 +832,23 @@ elif selected == "Projects":
             text-align: left;
             font-size: 16px;
             color: #white;
+          }
+          
+          @media (max-width: 1024px){
+              .card{
+                  max-width:275px;
+                  padding: 7px;
+              }
+              
+              .card-title {
+                  white-space:
+                  tex-align: justify;
+                  font-size: 15px;
+                  font-weight: bold;
+                  white-space: nowrap;
+                  overflow-wrap: break-word;
+                  word-break: break-word;
+              }
           }
         </style>
         
